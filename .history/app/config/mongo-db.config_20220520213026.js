@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const { MONGODB_URI} = require("./../config");
 
 const options = {
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
+    
 }
 module.exports = async () => {
     try {

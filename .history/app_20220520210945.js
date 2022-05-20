@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-require("./app/config/mongo-db.config")()
+require("./app/config/mongo-db.config")
 
 const app = express()
 
@@ -11,6 +11,10 @@ app.use("/api/v1/auth", require("./app/routes/auth.route"))
 app.use("/api/v1/users", require("./app/routes/users.route"))
 app.use("/api/v1/products", require("./app/routes/product.route"))
 
+const connectDB = async () =>{
+    await mongoose.connect(MONGODB_URI, options)
+    console.log(':::> Connected to MongoDB database')
+}
 
 
 app.get("/", (req, res) => {
