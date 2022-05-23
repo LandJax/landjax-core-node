@@ -15,33 +15,26 @@ const userSchema = new Schema({
         trim: true,
         required: [true, "Name is required"],
     },
-    email:{
+    email: {
         type: String,
         trim: true,
         unique: true,
         index: true,
         required: [true, "Email is required"]
     },
-    password:{
-        type: String,
+
+    password: {
+        type: String
     },
-    dateOfBirth:{
+    dateOfBirth: {
         type: Date,
         trim: true,
         required: true,
-
     },
+
     deletedAt:{type: Date}
-    
-}, {
-    timestamps: true
-});
 
-userSchema.pre('save', function(next){
-    const hash = await bcrypt.hash(this.password, BCRYPT_SALT);
-    this.password = hash;
-    
-    next()
-})
+}, {timestamps: true})
 
-module.exports = mongoose.model("User", userSchema)
+const User = mongoose.model('User', userSchema)
+module.exports = User
