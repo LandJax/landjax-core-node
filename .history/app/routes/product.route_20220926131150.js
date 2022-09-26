@@ -21,7 +21,7 @@ router.post("/create/product", async (req, res) => {
         })
     
         const storeNewProduct = await newProduct.save()
-        res.status(200).send({product: storeNewProduct, success: true})
+        res.status.send({product: storeNewProduct, success: true})
     }
     catch(err){
         console.log(err)

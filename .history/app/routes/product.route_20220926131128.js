@@ -6,7 +6,7 @@ router.get("/test/products", (req, res)=>{
     res.status(200).send({status: true, data: null, message: "success product"})
 })
 
-router.post("/create/product", async (req, res) => {
+router.get("/create/product", async (req, res) => {
     try{
         const newProduct = new productModel({
             productName: req.body.productName,
@@ -21,7 +21,7 @@ router.post("/create/product", async (req, res) => {
         })
     
         const storeNewProduct = await newProduct.save()
-        res.status(200).send({product: storeNewProduct, success: true})
+        res.status.send({product: storeNewProduct, })
     }
     catch(err){
         console.log(err)

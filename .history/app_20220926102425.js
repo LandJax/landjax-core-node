@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 require("./app/config/mongo-db.config")()
-require('dotenv').config()
+require('dotenv').con
 
 const app = express()
 
@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
     next()
 });
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8080
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`)

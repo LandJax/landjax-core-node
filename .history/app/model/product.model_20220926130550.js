@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
     locaton: {
         city: {type: String},
         state: {type: String},
-        country: {type: String}
+        country: {type:String}
     },
 
     isOnSale: {type: Boolean},

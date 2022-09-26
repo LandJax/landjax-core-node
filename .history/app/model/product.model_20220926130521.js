@@ -6,9 +6,9 @@ const productSchema = new mongoose.Schema({
     productName: {type: String},
     productDesc: {type: String},
     locaton: {
-        city: {type: String},
-        state: {type: String},
-        country: {type: String}
+        city: {String},
+        state: {String},
+        country: {String}
     },
 
     isOnSale: {type: Boolean},
